@@ -1,0 +1,21 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Seq Scan",
+      "Relation Name": "events",
+      "Alias": "events",
+      "Startup Cost": 0.00,
+      "Total Cost": 18234.50,
+      "Plan Rows": 50000,
+      "Plan Width": 124,
+      "Actual Startup Time": 0.014,
+      "Actual Total Time": 421.873,
+      "Actual Rows": 12,
+      "Actual Loops": 1,
+      "Filter": "(user_id = 12345 AND ts > '2026-04-01'::timestamp)",
+      "Rows Removed by Filter": 1199988
+    },
+    "Planning Time": 0.123,
+    "Execution Time": 421.998
+  }
+]

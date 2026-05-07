@@ -1,0 +1,30 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Nested Loop",
+      "Plan Rows": 100,
+      "Plan Width": 200,
+      "Actual Rows": 50000,
+      "Actual Loops": 1,
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Relation Name": "users",
+          "Plan Rows": 50000,
+          "Plan Width": 100,
+          "Actual Rows": 50000,
+          "Actual Loops": 1
+        },
+        {
+          "Node Type": "Index Scan",
+          "Relation Name": "events",
+          "Index Cond": "(user_id = users.id)",
+          "Plan Rows": 1,
+          "Plan Width": 100,
+          "Actual Rows": 1,
+          "Actual Loops": 50000
+        }
+      ]
+    }
+  }
+]

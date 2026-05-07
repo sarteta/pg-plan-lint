@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pg-plan-lint"
+version = "0.1.0"
+description = "Lint Postgres EXPLAIN ANALYZE plans for slow-query anti-patterns: seq scans on filtered big tables, hash joins spilling to disk, nested loops on too many outer rows, sort spilling, planner row-estimate skew."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Santiago Arteta"}]
+keywords = ["postgres","postgresql","explain","analyze","performance","linter","sre","dba"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Database",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+"pg-plan-lint" = "pg_plan_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sarteta/pg-plan-lint"
+Issues = "https://github.com/sarteta/pg-plan-lint/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

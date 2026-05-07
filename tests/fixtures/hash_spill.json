@@ -1,0 +1,45 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Hash Join",
+      "Join Type": "Inner",
+      "Startup Cost": 1234.0,
+      "Total Cost": 56789.0,
+      "Plan Rows": 100000,
+      "Plan Width": 200,
+      "Actual Rows": 95000,
+      "Actual Loops": 1,
+      "Plans": [
+        {
+          "Node Type": "Seq Scan",
+          "Relation Name": "orders",
+          "Plan Rows": 100000,
+          "Plan Width": 100,
+          "Actual Rows": 95000,
+          "Actual Loops": 1
+        },
+        {
+          "Node Type": "Hash",
+          "Plan Rows": 5000000,
+          "Plan Width": 100,
+          "Actual Rows": 4800000,
+          "Actual Loops": 1,
+          "Hash Buckets": 1024,
+          "Original Hash Batches": 8,
+          "Hash Batches": 8,
+          "Peak Memory Usage": 65536,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Relation Name": "users",
+              "Plan Rows": 5000000,
+              "Plan Width": 100,
+              "Actual Rows": 4800000,
+              "Actual Loops": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

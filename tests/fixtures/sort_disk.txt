@@ -1,0 +1,8 @@
+                                       QUERY PLAN
+-------------------------------------------------------------------------------------------------------------
+ Sort  (cost=12345.00..15000.00 rows=100000 width=100) (actual time=412.234..612.998 rows=98765 loops=1)
+   Sort Key: ts DESC
+   Sort Method: external merge Disk: 28456kB
+   ->  Seq Scan on events  (cost=0.00..8000.00 rows=100000 width=100) (actual time=0.011..50.123 rows=98765 loops=1)
+ Planning Time: 0.198 ms
+ Execution Time: 614.012 ms
