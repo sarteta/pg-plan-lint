@@ -1,5 +1,7 @@
 # pg-plan-lint
 
+[![tests](https://github.com/sarteta/pg-plan-lint/actions/workflows/tests.yml/badge.svg)](https://github.com/sarteta/pg-plan-lint/actions/workflows/tests.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+
 Reads a Postgres `EXPLAIN ANALYZE` plan and tells you what's wrong with
 it. Supports both JSON (`EXPLAIN (ANALYZE, FORMAT JSON)`) and the
 default text format.
